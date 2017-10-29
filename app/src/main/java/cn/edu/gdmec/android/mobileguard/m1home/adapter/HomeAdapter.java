@@ -1,5 +1,4 @@
 package cn.edu.gdmec.android.mobileguard.m1home.adapter;
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,16 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 /**
  * Created by Administrator on 2017/9/24.
  */
-
 public class HomeAdapter extends BaseAdapter {
     int[] imageId = {R.drawable.safe, R.drawable.callmsgsafe, R.drawable.app, R.drawable.trojan, R.drawable.sysoptimize
             , R.drawable.taskmanager, R.drawable.netmanager, R.drawable.atools, R.drawable.settings};
-
-
 
     String[] names = {"手机防盗", "通讯卫士", "软件管家", "手机杀毒", "缓存清理", "进程管理", "流量统计", "高级工具", "设置中心"};
     private Context context;
@@ -25,10 +20,9 @@ public class HomeAdapter extends BaseAdapter {
     public HomeAdapter(Context context) {
         this.context = context;
     }
-
-
     @Override
     public int getCount() {
+
         return 9;
     }
 
@@ -39,6 +33,7 @@ public class HomeAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int i) {
+
         return 0;
     }
 

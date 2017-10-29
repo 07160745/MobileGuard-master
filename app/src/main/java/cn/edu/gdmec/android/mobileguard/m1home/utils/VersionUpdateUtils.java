@@ -27,7 +27,6 @@ import cn.edu.gdmec.android.mobileguard.m1home.enity.VersionEntity;
 /**
  * Created by pc on 2017/9/23.
  */
-
 public class VersionUpdateUtils {
     private String mVersion;
     private Activity context;
@@ -62,7 +61,6 @@ public class VersionUpdateUtils {
         this.mVersion = mVersion;
         this.context = context;
     }
-
     public void getCloudVersion() {
 
         try {
@@ -71,7 +69,7 @@ public class VersionUpdateUtils {
             HttpConnectionParams.setSoTimeout(httpClient.getParams(), 5000);
             HttpGet httpGet = new HttpGet("http://android2017.duapp.com/updateinfo.html");
             HttpResponse execute = httpClient.execute(httpGet);
-            if (execute.getStatusLine().getStatusCode() == 200) {
+            if (execute.getStatusLine().getStatusCode()==200) {
                 HttpEntity httpEntity = execute.getEntity();
                 String result = EntityUtils.toString(httpEntity,"utf-8");
                 JSONObject jsonObject = new JSONObject(result);
@@ -87,13 +85,13 @@ public class VersionUpdateUtils {
                     downloadUtils.downloadApk(versionEntity.apkurl, "mobileSafe.apk", context);
                     */
                 }
-
             }
         } catch (IOException e) {
             handler.sendEmptyMessage(MESSAGE_IO_ERROR);
-
+             e.printStackTrace();
         } catch (JSONException e) {
             handler.sendEmptyMessage(MESSAGE_JSON_ERROR);
+            e.printStackTrace();
         }
     }
     private void showUpdateDialog(final VersionEntity versionEntity){
@@ -101,7 +99,7 @@ public class VersionUpdateUtils {
         builder.setTitle("检查到新版本:"+versionEntity.versionCode);
         builder.setMessage(versionEntity.description);
         builder.setCancelable(false);
-        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setIcon(R.mipmap.ic_launcher_round);
         builder.setPositiveButton("立刻升级", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -122,7 +120,7 @@ public class VersionUpdateUtils {
     }
     private void downloadNewApk(String apkurl){
         DownloadUtils downloadUtils = new DownloadUtils();
-        downloadUtils.downloadApk(apkurl,"mobileGuard.apk",context);
+        downloadUtils.downloadApk(apkurl,"mobileguard.apk",context);
     }
 
 

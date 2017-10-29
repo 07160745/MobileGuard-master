@@ -46,7 +46,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center_vertical|left"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/recomand_icon" />
+            android:background="@drawable/recomand_icon"/>
 
         <TextView
             style="@style/textView16sp"
@@ -57,23 +57,21 @@
             android:textColor="@color/purple"
             android:textScaleX="1.1" />
     </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:gravity="center"
-            android:weightSum="1">
+            android:gravity="center">
 
             <Button
+                android:layout_width="180dp"
                 android:id="@+id/btn_bind_sim"
-                android:layout_width="52dp"
-                android:layout_height="match_parent"
+                android:layout_height="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/sim_bind_selector"
-                android:gravity="center" />
+                android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

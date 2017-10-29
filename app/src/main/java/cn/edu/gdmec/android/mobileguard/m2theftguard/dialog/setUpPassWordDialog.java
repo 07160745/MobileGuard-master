@@ -1,5 +1,4 @@
 package cn.edu.gdmec.android.mobileguard.m2theftguard.dialog;
-
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 /**
  * Created by admin on 2017/10/8.
  */
@@ -45,13 +43,13 @@ public class setUpPassWordDialog extends Dialog implements View.OnClickListener{
         findViewById(R.id.btn_cancel).setOnClickListener(this);
     }
 
-
      public void setTitle(String title){
          if(!TextUtils.isEmpty(title)){
              mTitleTV.setText(title);
          }
      }
      public void setCallBack(MyCallBack myCallBack){
+
          this.myCallBack = myCallBack;
      }
 

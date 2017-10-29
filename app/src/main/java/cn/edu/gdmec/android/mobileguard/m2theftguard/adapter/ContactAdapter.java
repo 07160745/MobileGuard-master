@@ -1,5 +1,4 @@
 package cn.edu.gdmec.android.mobileguard.m2theftguard.adapter;
-
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import java.util.List;
 
 import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.entity.ContactInfo;
-
 /**
  * Created by admin on 2017/10/22.
  */
@@ -25,14 +23,17 @@ public class ContactAdapter extends BaseAdapter {
     }
     @Override
     public int getCount(){
+
         return contactInfos.size();
     }
     @Override
     public Object getItem(int i){
+
         return contactInfos.get(i);
     }
     @Override
     public long getItemId(int i){
+
         return i;
     }
     @Override

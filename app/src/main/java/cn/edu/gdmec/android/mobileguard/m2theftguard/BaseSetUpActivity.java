@@ -10,11 +10,9 @@ import android.view.Window;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 /**
  * Created by Lenovo on 2017/10/12.
  */
-
 public abstract class BaseSetUpActivity extends AppCompatActivity {
     public SharedPreferences sp;
     private GestureDetector mGestureDetector;
@@ -38,9 +36,9 @@ public abstract class BaseSetUpActivity extends AppCompatActivity {
         super.onCreate(savedInstancesState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         sp = getSharedPreferences("config",MODE_PRIVATE);
-
         mGestureDetector = new GestureDetector(this,new GestureDetector.SimpleOnGestureListener(){
             @Override
+
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY){
                 if (Math.abs(velocityX)<200){
                     Toast.makeText(getApplicationContext(),

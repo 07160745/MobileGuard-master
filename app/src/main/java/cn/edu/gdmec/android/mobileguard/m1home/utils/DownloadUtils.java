@@ -1,14 +1,11 @@
 package cn.edu.gdmec.android.mobileguard.m1home.utils;
-
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 import android.webkit.MimeTypeMap;
-
 /**
  * Created by pc on 2017/9/23.
  */
-
 public class DownloadUtils {
     public void downloadApk(String url, String targetFile, Context context){
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
@@ -19,7 +16,6 @@ public class DownloadUtils {
 
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
         request.setVisibleInDownloadsUi(true);
-
         request.setDestinationInExternalPublicDir("/download",targetFile);
         DownloadManager downloadManager = (DownloadManager)context.getSystemService(Context.DOWNLOAD_SERVICE);
         long mTaskid = downloadManager.enqueue(request);

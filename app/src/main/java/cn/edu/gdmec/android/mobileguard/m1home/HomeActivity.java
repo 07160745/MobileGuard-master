@@ -1,5 +1,7 @@
 package cn.edu.gdmec.android.mobileguard.m1home;
 
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,22 +18,23 @@ import cn.edu.gdmec.android.mobileguard.m1home.adapter.HomeAdapter;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.LostFindActivity;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.setUpPassWordDialog;
+import cn.edu.gdmec.android.mobileguard.m2theftguard.receiver.MyDeviceAdminReceiver;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.MD5Utils;
-
 /**
  * Created by pc on 2017/9/23.
  */
-
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
     private long mExitTime;
     private SharedPreferences mshardPreferences;
+    private DevicePolicyManager policyManager;
+    private ComponentName componentName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
-        mshardPreferences = getSharedPreferences("config",MODE_PRIVATE);
+        mshardPreferences = getSharedPreferences("config", MODE_PRIVATE);
         gv_home = (GridView) findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
         gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -39,16 +42,25 @@ public class HomeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        if (isSetUpPassword()){
+                        if (isSetUpPassword()) {
                             showInterPswdDialog();
-
-                        }else{
-                            showSetUpPswdDialog();
+                        } else
+                        {
+                            showInterPswdDialog();
                         }
+                        break;
                 }
             }
         });
-
+        policyManager=(DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
+componentName=new ComponentName(this, MyDeviceAdminReceiver.class);
+        boolean active=policyManager.isAdminActive(componentName);
+        if (!active){
+            Intent intent=new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
+            intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN,componentName);
+            intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,"获取超级管理员权限，用于远程锁屏和清除数据");
+            startActivity(intent);
+        }
     }
     public void startActivity(Class<?> cls){
         Intent intent = new Intent(HomeActivity.this,cls);
@@ -59,7 +71,8 @@ public class HomeActivity extends AppCompatActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK){
             if (System.currentTimeMillis()-mExitTime<2000){
                 System.exit(0);
-            }else{
+            }else
+                {
                 Toast.makeText(this,"再按一次退出程序", Toast.LENGTH_LONG).show();
                 mExitTime = System.currentTimeMillis();
             }
@@ -67,11 +80,9 @@ public class HomeActivity extends AppCompatActivity {
         }
         return  super.onKeyDown(keyCode,event);
     }
-
     private void showSetUpPswdDialog(){
-        final setUpPassWordDialog setUpPassWordDialog = new setUpPassWordDialog(HomeActivity.this
-        );
-        setUpPassWordDialog.setCallBack(new cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.setUpPassWordDialog.MyCallBack(){
+        final setUpPassWordDialog setUpPassWordDialog = new setUpPassWordDialog(HomeActivity.this);
+        setUpPassWordDialog.setCallBack(new setUpPassWordDialog.MyCallBack(){
             @Override
             public void ok(){
                 String firstPwsd = setUpPassWordDialog.mFirstPWDET.getText().toString().trim();
@@ -102,8 +113,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void showInterPswdDialog(){
         final String password = getPassword();
-        final InterPasswordDialog mInPswdDialog = new InterPasswordDialog(
-                HomeActivity.this);
+        final InterPasswordDialog mInPswdDialog = new InterPasswordDialog(HomeActivity.this);
         mInPswdDialog.setCallBack(new InterPasswordDialog.MyCallBack(){
             @Override
             public void confirm(){
@@ -119,14 +129,10 @@ public class HomeActivity extends AppCompatActivity {
                     Toast.makeText(HomeActivity.this,"密码错误,请重新输入!",Toast.LENGTH_SHORT).show();
                 }
             }
-
             @Override
             public void cancle() {
                 mInPswdDialog.dismiss();
             }
-
-
-
         });
         mInPswdDialog.setCancelable(true);
         mInPswdDialog.show();
@@ -136,7 +142,6 @@ public class HomeActivity extends AppCompatActivity {
         edit.putString("PhoneAntiTheftPWD",MD5Utils.encode(affirmPwsd));
         edit.commit();
     }
-
     private String getPassword(){
         String password = mshardPreferences.getString("PhoneAntiTheftPWD",null);
         if (TextUtils.isEmpty(password)){
@@ -147,7 +152,8 @@ public class HomeActivity extends AppCompatActivity {
         String  password = mshardPreferences.getString("PhoneAntiTheftPWD",null);
         if (TextUtils.isEmpty(password)){
             return false;
-        }return true;
+        }
+        return true;
     }
 
 }

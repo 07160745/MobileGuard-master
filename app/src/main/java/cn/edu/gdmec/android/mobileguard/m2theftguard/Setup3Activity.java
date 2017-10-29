@@ -10,11 +10,9 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 /**
  * Created by Lenovo on 2017/10/12.
  */
-
 public class Setup3Activity extends BaseSetUpActivity implements View.OnClickListener{
     private EditText mInputPhone;
     @Override
@@ -23,8 +21,6 @@ public class Setup3Activity extends BaseSetUpActivity implements View.OnClickLis
         setContentView(R.layout.activity_setup3);
         //y
         ((RadioButton) findViewById(R.id.rb_third)).setChecked(true);
-
-        ((RadioButton)findViewById(R.id.rb_third)).setChecked(true);
         findViewById(R.id.btn_addcontact).setOnClickListener(this);
         mInputPhone = (EditText) findViewById(R.id.et_inputphone);
         String safephone = sp.getString("safephone",null);

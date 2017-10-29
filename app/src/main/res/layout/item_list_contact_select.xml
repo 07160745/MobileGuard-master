@@ -11,7 +11,7 @@
         android:layout_height="60dp"
         android:layout_centerVertical="true"
         android:layout_margin="15dp"
-        android:background="@drawable/contact_icon" />
+        android:background="@drawable/contact_icon"/>
 
     <TextView
         android:id="@+id/tv_name"
@@ -19,6 +19,7 @@
         android:layout_alignTop="@+id/view1"
         android:layout_toRightOf="@+id/view1"
         android:textColor="@color/purple"/>
+
     <TextView
         android:id="@+id/tv_phone"
         style="@style/textView14sp"

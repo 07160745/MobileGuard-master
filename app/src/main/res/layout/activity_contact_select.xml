@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <include layout="@layout/titlebar" />
+    <include layout="@layout/titlebar"/>
 
     <ListView
         android:id="@+id/lv_contact"
@@ -12,5 +12,4 @@
         android:cacheColorHint="#00000000"
         android:divider="#FFFFFF"
         android:dividerHeight="1dp"/>
-
 </LinearLayout>

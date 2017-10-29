@@ -2,11 +2,9 @@ package cn.edu.gdmec.android.mobileguard.m2theftguard.utils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
 /**
  * Created by admin on 2017/10/8.
  */
-
 public class MD5Utils {
     /**
      * md5摘要

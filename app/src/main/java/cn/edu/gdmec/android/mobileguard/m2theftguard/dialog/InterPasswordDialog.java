@@ -15,7 +15,6 @@ import cn.edu.gdmec.android.mobileguard.R;
 /**
  * Created by admin on 2017/10/8.
  */
-
 public class InterPasswordDialog extends Dialog implements View.OnClickListener {
     private TextView mTitleTV;
     private EditText mInterET;

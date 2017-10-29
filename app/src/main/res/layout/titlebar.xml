@@ -10,7 +10,6 @@
         android:textSize="20sp"
         android:textColor="@android:color/white"
         android:layout_centerInParent="true"/>
-
     <ImageView
         android:id="@+id/imgv_leftbtn"
         android:layout_width="30dp"

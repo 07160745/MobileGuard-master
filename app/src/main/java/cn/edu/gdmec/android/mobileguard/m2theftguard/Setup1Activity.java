@@ -9,7 +9,6 @@ import cn.edu.gdmec.android.mobileguard.R;
 /**
  * Created by Lenovo on 2017/10/12.
  */
-
 public class Setup1Activity extends BaseSetUpActivity {
     @Override
     protected  void onCreate(Bundle savedInstanceState){
