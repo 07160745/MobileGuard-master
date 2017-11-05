@@ -42,12 +42,6 @@ if (!TextUtils.isEmpty(safephone)&sender.equals(safephone)){
         context.startService(service);
         abortBroadcast();
     }
-    else if ("#*alarm*#".equals(body)) {
-        Log.i(TAG, "播放报警音乐");
-        MediaPlayer player = MediaPlayer.create(R.raw.ylzs);
-        player.setVolume(1.0f, 1.0f);
-        player.start();
-        abortBroadcast();
     } else if ("#*wipedata".equals(body)) {
         Log.i(TAG, "远程清除数据");
         dpm.wipeData(DevicePolicyManager.WIPE_EXTERNAL_STORAGE);
@@ -62,4 +56,3 @@ if (!TextUtils.isEmpty(safephone)&sender.equals(safephone)){
             }
         }
     }
-}
