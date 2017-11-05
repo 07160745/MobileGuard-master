@@ -12,7 +12,6 @@ import cn.edu.gdmec.android.mobileguard.m2theftguard.entity.ContactInfo;
 /**
  * Created by admin on 2017/10/22.
  */
-
 public class ContactAdapter extends BaseAdapter {
     private List<ContactInfo> contactInfos;
     private Context context;
@@ -43,7 +42,7 @@ public class ContactAdapter extends BaseAdapter {
             view = View.inflate(context, R.layout.item_list_contact_select,null);
             holder = new ViewHolder();
             holder.mNameTV = (TextView) view.findViewById(R.id.tv_name);
-            holder.mPhoneTV = (TextView) view.findViewById(R.id.tv_phone);
+            holder.mPhoneTV = (TextView) view.findViewById(R.id.tv_black_mode);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();

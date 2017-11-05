@@ -6,16 +6,14 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.GpsSatellite;
 import android.media.MediaPlayer;
 import android.telephony.SmsMessage;
 import android.text.TextUtils;
 import android.util.Log;
 
-import javax.crypto.spec.GCMParameterSpec;
-
 import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.service.GPSLocationService;
+
 /**
  * Created by pc on 2017/10/25.
  */
@@ -30,7 +28,7 @@ public class SmsLostFindReceiver extends BroadcastReceiver {
             DevicePolicyManager dpm=(DevicePolicyManager) context.getSystemService(context.DEVICE_POLICY_SERVICE);
             Object[] objs=(Object[]) intent.getExtras().get("pdus");
             for (Object obj:objs){
-                SmsMessage smsMessage=SmsMessage.createFromPdu((byte[]) obj);
+                SmsMessage smsMessage= SmsMessage.createFromPdu((byte[]) obj);
                 String sender=smsMessage.getOriginatingAddress();
                 if (sender.startsWith("+86")){
                     sender=sender.substring(3,sender.length());
@@ -44,21 +42,19 @@ if (!TextUtils.isEmpty(safephone)&sender.equals(safephone)){
         context.startService(service);
         abortBroadcast();
     }
-    else if ("#*alarm*#".equals(body)){
-        Log.i(TAG,"播放报警音乐");
-        MediaPlayer player=MediaPlayer.create(context, R.raw.ylzs);
-        player.setVolume(1.0f,1.0f);
+    else if ("#*alarm*#".equals(body)) {
+        Log.i(TAG, "播放报警音乐");
+        MediaPlayer player = MediaPlayer.create(R.raw.ylzs);
+        player.setVolume(1.0f, 1.0f);
         player.start();
         abortBroadcast();
-    }
-    else if("#*wipedata".equals(body)){
-        Log.i(TAG,"远程清除数据");
+    } else if ("#*wipedata".equals(body)) {
+        Log.i(TAG, "远程清除数据");
         dpm.wipeData(DevicePolicyManager.WIPE_EXTERNAL_STORAGE);
         abortBroadcast();
-    }
-    else if ("#*lockScreen*#".equals(body)){
-        Log.i(TAG,"远程锁屏");
-        dpm.resetPassword("123456",0);
+    } else if ("#*lockScreen*#".equals(body)) {
+        Log.i(TAG, "远程锁屏");
+        dpm.resetPassword("123456", 0);
         dpm.lockNow();
         abortBroadcast();
     }
