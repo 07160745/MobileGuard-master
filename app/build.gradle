@@ -30,7 +30,7 @@ android {
         exclude 'META-INF/LGP2.1'
 
     }
-    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/raw'] } }
+    sourceSets { main { res.srcDirs = ['src/main/res', 'src/main/res/raw', 'src/main/res/xml'] } }
 }
 
 dependencies {

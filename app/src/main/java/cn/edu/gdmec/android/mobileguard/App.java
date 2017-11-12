@@ -1,5 +1,4 @@
 package cn.edu.gdmec.android.mobileguard;
-
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,7 +6,6 @@ import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
-
 /**
  * Created by admin on 2017/10/22.
  */

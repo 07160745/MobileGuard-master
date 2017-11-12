@@ -37,7 +37,6 @@
         android:layout_margin="15dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
-
         <EditText
             android:layout_width="match_parent"
             android:id="@+id/et_inputphone"
