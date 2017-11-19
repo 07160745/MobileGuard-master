@@ -1,5 +1,4 @@
 package cn.edu.gdmec.android.mobileguard.m1home;
-
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -20,9 +19,6 @@ import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.InterPasswordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.dialog.setUpPassWordDialog;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.receiver.MyDeviceAdminReceiver;
 import cn.edu.gdmec.android.mobileguard.m2theftguard.utils.MD5Utils;
-/**
- * Created by pc on 2017/9/23.
- */
 public class HomeActivity extends AppCompatActivity {
     private GridView gv_home;
     private long mExitTime;
@@ -34,7 +30,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         getSupportActionBar().hide();
-        mshardPreferences = getSharedPreferences("config", MODE_PRIVATE);
         gv_home = (GridView) findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter(HomeActivity.this));
         gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -155,6 +150,5 @@ componentName=new ComponentName(this, MyDeviceAdminReceiver.class);
         }
         return true;
     }
-
 }
 

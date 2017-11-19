@@ -13,7 +13,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_item);
         mVersion = MyUtils.getVersion(getApplication());
-        mTvVersion = (TextView)findViewById(R.id.accessibilityActionScrollRight);
+        mTvVersion = (TextView)findViewById(R.id.switchInputMethod);
         mTvVersion.setText("版本号:"+mVersion);
         final VersionUpdateUtils versionUpdateUtils = new VersionUpdateUtils(mVersion,SplashActivity.this);
         new Thread(){

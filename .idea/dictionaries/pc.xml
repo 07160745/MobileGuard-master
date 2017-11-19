@@ -2,6 +2,9 @@
   <dictionary name="pc">
     <words>
       <w>addcontact</w>
+      <w>allscan</w>
+      <w>allscanvirus</w>
+      <w>apkpath</w>
       <w>appicon</w>
       <w>appinfos</w>
       <w>appisroom</w>
@@ -12,14 +15,19 @@
       <w>appsize</w>
       <w>atools</w>
       <w>balcknumber</w>
+      <w>bengin</w>
       <w>blacknum</w>
       <w>blacknumber</w>
       <w>blacknumbericon</w>
       <w>blacknumbers</w>
       <w>brightpurple</w>
+      <w>cancelscan</w>
+      <w>cancle</w>
+      <w>canclescan</w>
       <w>comfirm</w>
       <w>communicationguard</w>
       <w>coner</w>
+      <w>dbname</w>
       <w>deleteicon</w>
       <w>firstpwd</w>
       <w>fromcontact</w>
@@ -30,6 +38,7 @@
       <w>infos</w>
       <w>inputphone</w>
       <w>interpwd</w>
+      <w>lastscantime</w>
       <w>leftbtn</w>
       <w>lostfind</w>
       <w>mobileguard</w>
@@ -39,11 +48,17 @@
       <w>phoneicon</w>
       <w>phonememory</w>
       <w>protectstauts</w>
+      <w>quickscan</w>
       <w>radiogroup</w>
       <w>reciever</w>
       <w>recomand</w>
+      <w>rightarrow</w>
       <w>rightbtn</w>
       <w>safephone</w>
+      <w>scanapp</w>
+      <w>scanapps</w>
+      <w>scanningicon</w>
+      <w>scanprocess</w>
       <w>sdmemory</w>
       <w>securityfunction</w>
       <w>securityphone</w>
@@ -55,6 +70,7 @@
       <w>titlebar</w>
       <w>togglebtn</w>
       <w>tvyellow</w>
+      <w>virusscan</w>
       <w>widthwrapcontent</w>
       <w>wipedata</w>
       <w>wrapcontent</w>
