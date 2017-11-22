@@ -18,7 +18,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 
 import cn.edu.gdmec.android.mobileguard.R;
-
 public class VirusScanActivity extends AppCompatActivity implements View.OnClickListener{
 private TextView mLastTimeTV;
     private SharedPreferences mSP;

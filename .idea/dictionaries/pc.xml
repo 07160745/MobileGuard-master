@@ -21,9 +21,13 @@
       <w>blacknumbericon</w>
       <w>blacknumbers</w>
       <w>brightpurple</w>
+      <w>cacheclean</w>
       <w>cancelscan</w>
       <w>cancle</w>
       <w>canclescan</w>
+      <w>cleanall</w>
+      <w>cleancache</w>
+      <w>cleanmemorysize</w>
       <w>comfirm</w>
       <w>communicationguard</w>
       <w>coner</w>
@@ -41,9 +45,11 @@
       <w>lastscantime</w>
       <w>leftbtn</w>
       <w>lostfind</w>
+      <w>memoryunit</w>
       <w>mobileguard</w>
       <w>noblacknumber</w>
       <w>noblacknumbericon</w>
+      <w>packagename</w>
       <w>packname</w>
       <w>phoneicon</w>
       <w>phonememory</w>
@@ -54,9 +60,11 @@
       <w>recomand</w>
       <w>rightarrow</w>
       <w>rightbtn</w>
+      <w>righticon</w>
       <w>safephone</w>
       <w>scanapp</w>
       <w>scanapps</w>
+      <w>scancache</w>
       <w>scanningicon</w>
       <w>scanprocess</w>
       <w>sdmemory</w>
@@ -69,6 +77,7 @@
       <w>theftguard</w>
       <w>titlebar</w>
       <w>togglebtn</w>
+      <w>trashbin</w>
       <w>tvyellow</w>
       <w>virusscan</w>
       <w>widthwrapcontent</w>

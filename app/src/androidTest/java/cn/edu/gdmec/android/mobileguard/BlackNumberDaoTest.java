@@ -16,9 +16,6 @@ import cn.edu.gdmec.android.mobileguard.m3communicationguard.entity.BlackContact
 @RunWith(AndroidJUnit4.class)
 @SdkSuppress(minSdkVersion = 18)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-/**
- * Created by pc on 2017/11/1.
- */
 public class BlackNumberDaoTest {
     private Context context;
     private BlackNumberDao dao;
@@ -59,7 +56,6 @@ public class BlackNumberDaoTest {
         int mode = dao.getBlackContactMode(135000000l + "");
         Log.i("TestBlackNumberDao", mode + "");
     }
-
     public void t5GetTotalNumber() throws Exception {
         BlackNumberDao dao = new BlackNumberDao(context);
         int tatal = dao.getTotalNumber();
