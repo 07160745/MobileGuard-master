@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="100"
+    tools:context="cn.edu.gdmec.android.mobileguard.m8trafficmonitor.OperatorSetActivity"
+    android:orientation="vertical">
+    <include layout="@layout/titlebar"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/wrapcontent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/operator_set_info_incon"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/textView16sp"
+                android:layout_marginRight="15dp"
+                android:lineSpacingMultiplier="1.5"
+                android:text="很简单呢"
+                android:textColor="@color/black"
+                android:textScaleX="1.1"/>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             style="@style/textView16sp"
+             android:text="运营商"/>
+        <Spinner
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/spinner_operator_select"
+            android:layout_marginLeft="20dp"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/operator_spinner_bg"
+            android:gravity="center"/>
+    </LinearLayout>
+<Button
+android:layout_width="288dp"
+android:layout_height="45dp"
+android:id="@+id/btn_operator_finish"
+android:layout_gravity="center_horizontal"
+android:layout_marginBottom="15dp"
+android:layout_weight="10"
+android:background="@drawable/operator_finish_bg_selector"/>
+    </LinearLayout>
