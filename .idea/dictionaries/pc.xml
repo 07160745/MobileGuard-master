@@ -2,12 +2,16 @@
   <dictionary name="pc">
     <words>
       <w>addcontact</w>
+      <w>advancedtools</w>
+      <w>advanceview</w>
+      <w>advaned</w>
       <w>allscan</w>
       <w>allscanvirus</w>
       <w>apkpath</w>
       <w>appicon</w>
       <w>appinfos</w>
       <w>appisroom</w>
+      <w>applock</w>
       <w>appmanager</w>
       <w>appmanger</w>
       <w>appname</w>
@@ -15,6 +19,7 @@
       <w>appsize</w>
       <w>atools</w>
       <w>balcknumber</w>
+      <w>belongto</w>
       <w>bengin</w>
       <w>blacknum</w>
       <w>blacknumber</w>
@@ -33,6 +38,7 @@
       <w>coner</w>
       <w>dbname</w>
       <w>deleteicon</w>
+      <w>desription</w>
       <w>firstpwd</w>
       <w>fromcontact</w>
       <w>gdmec</w>
@@ -49,10 +55,16 @@
       <w>mobileguard</w>
       <w>noblacknumber</w>
       <w>noblacknumbericon</w>
+      <w>numaddressbg</w>
+      <w>numbelongs</w>
+      <w>numbelongto</w>
+      <w>numbelongtoicon</w>
       <w>packagename</w>
       <w>packname</w>
       <w>phoneicon</w>
       <w>phonememory</w>
+      <w>phonenumber</w>
+      <w>programoflock</w>
       <w>protectstauts</w>
       <w>quickscan</w>
       <w>radiogroup</w>
@@ -68,11 +80,15 @@
       <w>scanningicon</w>
       <w>scanprocess</w>
       <w>sdmemory</w>
+      <w>searchnumbelongto</w>
+      <w>searchresult</w>
       <w>securityfunction</w>
       <w>securityphone</w>
       <w>settingicon</w>
       <w>setuppwd</w>
       <w>shareicon</w>
+      <w>smsbackup</w>
+      <w>smsreducition</w>
       <w>textview</w>
       <w>theftguard</w>
       <w>titlebar</w>
