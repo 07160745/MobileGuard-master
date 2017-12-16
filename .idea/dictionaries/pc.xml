@@ -8,6 +8,7 @@
       <w>allscan</w>
       <w>allscanvirus</w>
       <w>apkpath</w>
+      <w>apkurl</w>
       <w>appicon</w>
       <w>appinfos</w>
       <w>appisroom</w>
@@ -39,10 +40,12 @@
       <w>dbname</w>
       <w>deleteicon</w>
       <w>desription</w>
+      <w>enterpsw</w>
       <w>firstpwd</w>
       <w>fromcontact</w>
       <w>gdmec</w>
       <w>graye</w>
+      <w>greenicon</w>
       <w>haveblacknumber</w>
       <w>imgv</w>
       <w>infos</w>
@@ -53,6 +56,7 @@
       <w>lostfind</w>
       <w>memoryunit</w>
       <w>mobileguard</w>
+      <w>mshard</w>
       <w>noblacknumber</w>
       <w>noblacknumbericon</w>
       <w>numaddressbg</w>
@@ -60,10 +64,12 @@
       <w>numbelongto</w>
       <w>numbelongtoicon</w>
       <w>packagename</w>
+      <w>packagenames</w>
       <w>packname</w>
       <w>phoneicon</w>
       <w>phonememory</w>
       <w>phonenumber</w>
+      <w>proected</w>
       <w>programoflock</w>
       <w>protectstauts</w>
       <w>quickscan</w>
@@ -89,6 +95,7 @@
       <w>shareicon</w>
       <w>smsbackup</w>
       <w>smsreducition</w>
+      <w>spalsh</w>
       <w>textview</w>
       <w>theftguard</w>
       <w>titlebar</w>

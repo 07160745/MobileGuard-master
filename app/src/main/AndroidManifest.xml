@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cn.edu.gdmec.android.mobileguard">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,6 +18,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProectedPermissions" />
 
     <application
         android:name=".App"
@@ -26,13 +30,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".m1home.HomeActivity" />
         <activity android:name=".m2theftguard.LostFindActivity" />
         <activity android:name=".m2theftguard.Setup1Activity" />
@@ -131,7 +128,18 @@
         <activity android:name=".m9advancedtools.widget.AdvancedToolsView" />
         <activity android:name=".m9advancedtools.db.dao.NumBelongtoDao" />
         <activity android:name=".m9advancedtools.NumBelongtoActivity" />
-        <activity android:name=".m9advancedtools.AdvanedToolsActivity"></activity>
+        <activity android:name=".m9advancedtools.AdvanedToolsActivity" />
+        <activity android:name=".m9advancedtools.db.dao.AppLockDao" />
+        <activity android:name=".m9advancedtools.adapter.AppLockAdapter" />
+        <activity android:name=".m9advancedtools.EnterPswActivity" />
+        <activity android:name=".m9advancedtools.service.AppLockService" />
+        <activity android:name=".m9advancedtools.fragment.AppLockFragment" />
+        <activity android:name=".m9advancedtools.fragment.AppUnLockFragment" />
+        <activity android:name=".m9advancedtools.AppLockActivity" />
+        <activity
+            android:name=".m9advancedtools.db.AppLockOpenHelper"
+            android:label="@string/title_activity_app_lock_open_helper" />
+        <activity android:name=".SpalshActivity"></activity>
     </application>
 
 </manifest>

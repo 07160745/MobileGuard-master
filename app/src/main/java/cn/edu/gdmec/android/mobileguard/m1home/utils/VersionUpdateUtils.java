@@ -1,5 +1,4 @@
 package cn.edu.gdmec.android.mobileguard.m1home.utils;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -7,9 +6,9 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.Toast;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.annotation.Obsolete;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -17,27 +16,20 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
-
 import cn.edu.gdmec.android.mobileguard.m1home.HomeActivity;
 import cn.edu.gdmec.android.mobileguard.R;
 import cn.edu.gdmec.android.mobileguard.m1home.enity.VersionEntity;
-
-/**
- * Created by pc on 2017/9/23.
- */
 public class VersionUpdateUtils {
     private String mVersion;
     private Activity context;
     private VersionEntity versionEntity;
-
     private static final int MESSAGE_IO_ERROR = 102;
     private static final int MESSAGE_JSON_ERROR = 103;
     private static final int MESSAGE_SHOW_DIALOG = 104;
     private static final int MESSAGE_ENTERHOME = 105;
-
     private Handler handler = new Handler(){
+        @Override
         public void handleMessage(Message msg){
             switch (msg.what){
                 case MESSAGE_IO_ERROR:
@@ -79,11 +71,6 @@ public class VersionUpdateUtils {
                 versionEntity.apkurl = jsonObject.getString("apkurl");
                 if (!mVersion.equals(versionEntity.versionCode)) {
                     handler.sendEmptyMessage(MESSAGE_SHOW_DIALOG);
-                    /*
-                    System.out.println(versionEntity.description);
-                    DownloadUtils downloadUtils = new DownloadUtils();
-                    downloadUtils.downloadApk(versionEntity.apkurl, "mobileSafe.apk", context);
-                    */
                 }
             }
         } catch (IOException e) {
@@ -122,7 +109,7 @@ public class VersionUpdateUtils {
         DownloadUtils downloadUtils = new DownloadUtils();
         downloadUtils.downloadApk(apkurl,"mobileguard.apk",context);
     }
+    public static class DownloadCallback {
 
-
-
+    }
 }

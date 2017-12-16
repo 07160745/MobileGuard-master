@@ -3,9 +3,7 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 import android.webkit.MimeTypeMap;
-/**
- * Created by pc on 2017/9/23.
- */
+
 public class DownloadUtils {
     public void downloadApk(String url, String targetFile, Context context){
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
@@ -13,7 +11,6 @@ public class DownloadUtils {
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
         String mimeString = mimeTypeMap.getMimeTypeFromExtension(mimeTypeMap.getFileExtensionFromUrl(url));
         request.setMimeType(mimeString);
-
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
         request.setVisibleInDownloadsUi(true);
         request.setDestinationInExternalPublicDir("/download",targetFile);
