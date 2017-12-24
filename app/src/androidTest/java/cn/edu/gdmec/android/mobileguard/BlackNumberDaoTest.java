@@ -6,7 +6,6 @@ import android.support.test.filters.SdkSuppress;
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
 import org.junit.FixMethodOrder;
-import org.junit.internal.MethodSorter;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import java.util.List;
@@ -19,7 +18,6 @@ import cn.edu.gdmec.android.mobileguard.m3communicationguard.entity.BlackContact
 public class BlackNumberDaoTest {
     private Context context;
     private BlackNumberDao dao;
-
     public void setUp() {
         context = InstrumentationRegistry.getTargetContext();
         dao = new BlackNumberDao(context);

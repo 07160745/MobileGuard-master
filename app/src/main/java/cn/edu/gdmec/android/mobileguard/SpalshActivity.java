@@ -11,6 +11,7 @@ import cn.edu.gdmec.android.mobileguard.m1home.utils.MyUtils;
 import cn.edu.gdmec.android.mobileguard.m1home.utils.VersionUpdateUtils;
 public class SpalshActivity extends AppCompatActivity {
     private TextView mVersionTV;
+    private TextView mTVVersion;
     private String mVersion;
     private static final int MY_PERMISSIONS_REQUEST_PACKAGE_USAGE__STATS = 1101;
     @Override
@@ -27,7 +28,6 @@ public class SpalshActivity extends AppCompatActivity {
         VersionUpdateUtils.DownloadCallback downloadCallback = new VersionUpdateUtils.DownloadCallback();
     };
     final VersionUpdateUtils versionUpdateUtils = new VersionUpdateUtils(mVersion, SpalshActivity.this);
-
     private boolean hasPermission() {
         AppOpsManager appOps=(AppOpsManager)getSystemService(Context.APP_OPS_SERVICE);
         int mode=0;

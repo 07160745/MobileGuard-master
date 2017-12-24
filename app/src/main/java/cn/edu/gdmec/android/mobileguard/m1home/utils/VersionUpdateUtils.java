@@ -8,7 +8,6 @@ import android.os.Message;
 import android.widget.Toast;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.annotation.Obsolete;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -54,7 +53,6 @@ public class VersionUpdateUtils {
         this.context = context;
     }
     public void getCloudVersion() {
-
         try {
             HttpClient httpClient = new DefaultHttpClient();
             HttpConnectionParams.setConnectionTimeout(httpClient.getParams(), 5000);
@@ -71,6 +69,9 @@ public class VersionUpdateUtils {
                 versionEntity.apkurl = jsonObject.getString("apkurl");
                 if (!mVersion.equals(versionEntity.versionCode)) {
                     handler.sendEmptyMessage(MESSAGE_SHOW_DIALOG);
+                    System.out.println(versionEntity.description);
+                    DownloadUtils.downloadUtils=new DownloadUtils();
+                    DownloadUtils.downloadNewApk(versionEntity.apkurl,"mobileguard.apk",context);
                 }
             }
         } catch (IOException e) {

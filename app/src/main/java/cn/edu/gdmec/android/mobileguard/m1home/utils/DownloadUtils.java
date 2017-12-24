@@ -1,10 +1,11 @@
 package cn.edu.gdmec.android.mobileguard.m1home.utils;
+import android.app.Activity;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.net.Uri;
 import android.webkit.MimeTypeMap;
-
 public class DownloadUtils {
+    public static DownloadUtils downloadUtils;
     public void downloadApk(String url, String targetFile, Context context){
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
         request.setAllowedOverRoaming(false);
@@ -16,5 +17,7 @@ public class DownloadUtils {
         request.setDestinationInExternalPublicDir("/download",targetFile);
         DownloadManager downloadManager = (DownloadManager)context.getSystemService(Context.DOWNLOAD_SERVICE);
         long mTaskid = downloadManager.enqueue(request);
+    }
+    public static void downloadNewApk(String apkurl, String s, Activity context) {
     }
 }
